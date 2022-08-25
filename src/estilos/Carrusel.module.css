@@ -1,0 +1,43 @@
+.sliderContenedor {
+  margin: 0vh 12vh 0vh 12vh;
+  overflow: hidden;
+  text-align: center;
+  height: 80vh;
+  
+}
+
+.slider {
+  display: flex;
+  cursor: grab; /*manita*/
+}
+.item {
+  height: auto; /*alto 100vh */
+  width: auto; /*maximo de ancho*/
+  object-fit: cover;
+}
+
+.item img {
+  height: 78vh;
+  width: 60vh;
+  cursor:grab;
+  pointer-events: none;
+  margin: 0 2.5vh 0vh 2.5vh;
+  object-fit: cover;
+  border-radius:5px;
+
+}
+
+.linkSerie {
+  text-decoration: none;
+  color: rgb(250, 247, 247);
+  font-size: 1.25rem;
+  background-color: rgba(24, 46, 46, 0.4);
+  position: absolute;
+  top: 68vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: inline-block;
+  text-shadow: 3px 2px 5px rgb(2, 2, 21);
+}
