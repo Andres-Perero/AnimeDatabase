@@ -1,52 +1,36 @@
+import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import styles from "../estilos/App.module.css";
 import { Series } from "../pages/Series";
-import React, { useState } from "react";
-import { Header, Nav, LinkNav, SvgBox } from "../estilos/StylesNav";
-import Slider from "./Carrusel";
+import { Slider } from "./Carrusel";
 import { SerieDetailsweb } from "../pages/SerieDetails";
-import RankinAnineList from "./Ranking";
+import { RankinAnineList } from "./Ranking";
 import { SearchSerie } from "../pages/SearchSerie";
+import styles from "../estilos/Header.module.css";
 
 export function HearderPage() {
   return (
     <>
+      <header className={styles.wrapper}>
+        <Link to="/">
+          <h1 className={styles.title}>
+            The <strong>Anime</strong> DataBase
+          </h1>
+        </Link>
+      </header>
       <main>
-        <Header>
-          <Link class="wrapper" to="/">
-            <h1 class="title">
-              The <strong>Anime</strong> DataBase
-            </h1>
-          </Link>
-        </Header>
-        <Nav>
-          <LinkNav>
-            <Link className={styles.linksNav} to="/">
-              Home
-            </Link>
-          </LinkNav>
-          <LinkNav>
-            <Link className={styles.linksNav} to="/list-serie">
-              Series
-            </Link>
-          </LinkNav>
-          <LinkNav>
-            <Link className={styles.linksNav} to="/top-anime-list">
-              Mejores Series
-            </Link>
-          </LinkNav>
-          <LinkNav>
-            <Link className={styles.linksNav} to="/search">
-              Buscar Serie
-            </Link>
-          </LinkNav>
-        </Nav>
-
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/list-serie">Series</Link>
+          <Link to="/top-anime-list">Mejores Series</Link>
+          <Link to="/search">Buscar Serie</Link>
+        </nav>
         <Routes>
-          {/* <Route path="/" element={<SliderMOD />} /> */}
           <Route path="/" element={<Slider />} />
           <Route path="/list-serie" element={<Series />} />
-          <Route path="/list-serie/:nameSerie" element={<SerieDetailsweb />} />
+          <Route
+            path="/serie/:serieId/:serieTitle"
+            element={<SerieDetailsweb />}
+          />
           <Route path="/top-anime-list" element={<RankinAnineList />} />
           <Route path="/search" element={<SearchSerie />} />
         </Routes>

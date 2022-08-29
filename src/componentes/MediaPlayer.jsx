@@ -1,7 +1,7 @@
 import ReactPlayer from "react-player"; //https://www.npmjs.com/package/react-player
-export function MediaPlayer() {
+
+export const  MediaPlayer = () => {
   return (
-    <div>
       <ReactPlayer
         url="https://youtu.be/5Qkuh2mDShw"
         controls
@@ -11,6 +11,5 @@ export function MediaPlayer() {
         height="360px"
         onReady
       />
-    </div>
   );
 }

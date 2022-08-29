@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Series from "./Series";
+import {Series} from "./Series";
 import { Spinner } from "./SpinnerLoader";
 //Mejores Series
 
 //Api methods {search, top}
 //https://jikan.docs.apiary.io/#introduction/v4-rest-api-release
-function RankinAnineList() {
+export const RankinAnineList =() => {
   const [topAnime, SetTopAnime] = useState([]);
   const [loading, SetLoading] = useState(false);
 
@@ -24,5 +24,3 @@ function RankinAnineList() {
     <div>{loading ? <Series SeriesList={topAnime}></Series> : <Spinner />}</div>
   );
 }
-
-export default RankinAnineList;

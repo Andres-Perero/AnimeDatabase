@@ -1,6 +1,5 @@
 import React from "react";
-
-import Series from "./Series";
+import {Series} from "./Series";
 import styles from "../estilos/Search.module.css";
 
 function MainConteiner(props) {
@@ -9,11 +8,11 @@ function MainConteiner(props) {
       <div className={styles.Conteiner}>
         <form onSubmit={props.HandleSearch}>
           <div className={styles.row}>
-            <div class="col-75">
+            <div className="col-75">
               <input
                 className={styles.Input}
                 type="search"
-                placeholder="Busca wachin"
+                placeholder="Busca aqui wachin"
                 required
                 value={props.search}
                 onChange={(e) => props.SetSearch(e.target.value)}

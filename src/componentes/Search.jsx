@@ -4,7 +4,7 @@ import MainConteiner from "./MainConteiner";
 //Api methods {search, top}
 //https://jikan.docs.apiary.io/#introduction/v4-rest-api-release
 
-export function Search() {
+export const Search = () => {
   const [animeList, SetAnimeList] = useState([]);
   const [search, SetSearch] = useState("");
 
@@ -25,7 +25,6 @@ export function Search() {
   }, []);
 
   return (
-    <div>
       <MainConteiner
         HandleSearch={HandleSearch}
         search={search}
@@ -33,6 +32,5 @@ export function Search() {
         SetAnimeList={SetAnimeList}
         animeList={animeList}
       />
-    </div>
   );
 }

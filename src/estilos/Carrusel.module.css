@@ -2,8 +2,7 @@
   margin: 0vh 12vh 0vh 12vh;
   overflow: hidden;
   text-align: center;
-  height: 80vh;
-  
+  height: 82vh;
 }
 
 .slider {
@@ -21,7 +20,7 @@
   width: 60vh;
   cursor:grab;
   pointer-events: none;
-  margin: 0 2.5vh 0vh 2.5vh;
+  margin: 0 2.5vh;
   object-fit: cover;
   border-radius:5px;
 

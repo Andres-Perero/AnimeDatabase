@@ -1,57 +1,22 @@
 body {
   /*background-image: url(imagine2.jpg);*/
   background-color: rgb(19, 38, 50);
-
   margin: 0 0 0 0;
 }
 
-header {
-  width: 100%;
-  height: 50px;
-}
-header nav ul {
-  padding: 0 0;
-  margin: 0 0;
+::-webkit-scrollbar {
+  width: 12px;
+  background-image: transparent !important;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
-.wrapper {
-  animation: sliding-background 40s linear infinite;
-  background: url("../datos/fondoTitulo.jpg") no-repeat left/125%;
-  height: 66.7px;
-  text-align: center;
-  justify-content: center;
-  width: 100%;
-  text-decoration: none;
-  
-}
-
-.title {
-  background: rgb(255, 255, 255);
- 
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.1rem;
-  line-height: 66.7px;
-  margin: 0;
-  mix-blend-mode: lighten;
-  text-transform: uppercase;
-
-}
-.title:before {
-  color: white;
-
-  margin-left: -1%;
-  margin-top: -1%;
-  position: absolute;
-}
-
-@keyframes sliding-background {
-  0%,
-  100% {
-    background-position: 0 40%;
-  }
-  50% {
-    background-position: 100% 40%;
-  }
+::-webkit-scrollbar-thumb {
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 12%;
+  background-image: linear-gradient(
+    180deg,
+    rgba(240, 41, 240, 0.504) 0%,
+    rgba(203, 61, 209, 0.40800070028011204) 50%,
+    rgba(0, 64, 255, 0.405) 100%
+  );
 }

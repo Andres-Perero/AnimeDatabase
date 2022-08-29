@@ -1,17 +1,19 @@
 import datosJson from "../datos/movies.json";
-import styles from "../estilos/MoviesGrid.module.css";
-import SerieCard from "./SerieCard";
+import styles from "../estilos/SeriesGrid.module.css";
+import {SerieCard} from "./SerieCard";
 
-export function MoviesGrid() {
+export const  MoviesGrid =() => {
   return (
     <div className={styles.gridContainer}>
-       {datosJson.map((serie) => (
-         <SerieCard
+      {datosJson.map((serie) => (
+        <SerieCard
+          key={serie.id}
           title={serie.title}
           image={serie.thumbnailUrl}
           id={serie.id}
-          url={serie.url}  />
-         ))}
+          url={serie.url}
+        />
+      ))}
     </div>
   );
 }

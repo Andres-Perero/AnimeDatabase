@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:900");
+.wrapper {
+  animation: sliding-background 40s linear infinite;
+  background: url("../datos/fondoTitulo.jpg") no-repeat left/125%;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+header a {
+    
+  text-decoration: none;
+}
+main nav a {
+  list-style-type: none;
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  margin: 1vh 3vh;
+  padding: auto;
+}
+nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  background: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0.1rem;
+  line-height: 66.7px;
+  margin: 0;
+  mix-blend-mode: lighten;
+  text-transform: uppercase;
+}
+.title:before {
+  color: white;
+  margin-left: -1%;
+  margin-top: -1%;
+  position: absolute;
+}
+
+@keyframes sliding-background {
+  0%,
+  100% {
+    background-position: 0 40%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+}

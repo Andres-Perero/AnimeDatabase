@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import listaImagenes from "../datos/Imagenes.js";
-import styles from "../estilos/Carrusel.module.css";
+import ImagesJson from "../datos/Imagenes.js";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import styles from "../estilos/Carrusel.module.css";
 
 const variants = {
   hidden: {
@@ -18,7 +18,7 @@ const variants = {
   }),
 };
 
-const Slider = () => {
+export const Slider = () => {
   const [width, setWidth] = useState(0);
   const carousel = useRef();
 
@@ -34,8 +34,8 @@ const Slider = () => {
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >
-          {listaImagenes.map((imagen, index) => (
-            <motion.div
+          {ImagesJson.map((imagen, index) => (
+            <motion.div key={index}
               custom={{ delay: (index + 1) * 0.15 }}
               initial="hidden"
               animate="visible"
@@ -49,9 +49,8 @@ const Slider = () => {
             >
               <img src={imagen} alt={index} />
               <Link
-                key={imagen.id}
                 className={styles.linkSerie}
-                to={`/list-serie/${index}`}
+                to={`/serie/${index}/${imagen}`}
               >
                 {index}.....TOUCH ME HARD
               </Link>
@@ -63,4 +62,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+

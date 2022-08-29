@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { CardDetail } from "../componentes/SerieDetail";
 
 export function SerieDetailsweb() {
-  const {nameSerie} = useParams()
-  console.log(nameSerie)
-  return <div> Detalles serie!!!!! {nameSerie}</div>;
+  const { serieId, serieTitle } = useParams();
+  const moreInfo = useLocation().state;
+
+  return <CardDetail id={serieId} title={serieTitle} infoSerie={moreInfo} />;
 }

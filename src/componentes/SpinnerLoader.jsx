@@ -16,9 +16,9 @@ height: 70px;
 position: relative;
 top: 30vh;
 left:45%;
-
 border-radius: 50%;
 border-left-color:  rgba(235, 232, 233, 0.872);
 animation: ${spin} 0.5s linear infinite;
-
 `;
+
+
