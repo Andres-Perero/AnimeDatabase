@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import MainConteiner from "./MainConteiner";
+import {FormSearchSerie} from "./FormSearchSerie";
 
 //Api methods {search, top}
 //https://jikan.docs.apiary.io/#introduction/v4-rest-api-release
 
-export const Search = () => {
+export const SearchSerie = () => {
   const [animeList, SetAnimeList] = useState([]);
   const [search, SetSearch] = useState("");
 
@@ -18,6 +18,7 @@ export const Search = () => {
       (res) => res.json()
     );
     SetAnimeList(temp.data);
+    console.log(temp.data)
   };
   
   useEffect(() => {
@@ -25,7 +26,7 @@ export const Search = () => {
   }, []);
 
   return (
-      <MainConteiner
+      <FormSearchSerie
         HandleSearch={HandleSearch}
         search={search}
         SetSearch={SetSearch}

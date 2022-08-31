@@ -2,13 +2,13 @@ import React from "react";
 import {Series} from "./Series";
 import styles from "../estilos/Search.module.css";
 
-function MainConteiner(props) {
+export const  FormSearchSerie =(props) => {
   return (
     <main>
       <div className={styles.Conteiner}>
         <form onSubmit={props.HandleSearch}>
           <div className={styles.row}>
-            <div className="col-75">
+            <div className={styles.col75}>
               <input
                 className={styles.Input}
                 type="search"
@@ -21,11 +21,7 @@ function MainConteiner(props) {
           </div>
         </form>
       </div>
-      <div>
         <Series SeriesList={props.animeList} />
-      </div>
     </main>
   );
 }
-
-export default MainConteiner;

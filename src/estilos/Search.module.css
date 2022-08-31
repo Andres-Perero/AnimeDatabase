@@ -1,46 +1,95 @@
 .Input {
-    width: 600px;
-    height: 45px;
-    margin: auto;
-    font-size: inherit;
-    padding: 0 58px 0 28px;
-    border-radius: 30px;
-    border: none;
-    border: 1.3px solid #f2f2f2;
-    outline: 0;
-    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.15);
-    transition: all 300ms ease;
+  width: 600px;
+  height: 45px;
+  margin: auto;
+  font-size: inherit;
+  padding: 0 58px 0 28px;
+  border-radius: 30px;
+  border: none;
+  border: 1.3px solid #f2f2f2;
+  outline: 0;
+  box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.198);
+  transition: all 300ms ease;
 }
 
 .Conteiner {
-    border-radius: 5px;
-    text-align:center;
-    position: relative;
-    margin-top: 10px;
-  }
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+}
 
-  
-.col-25 {
+.col25 {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.col75 {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="search"] {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 0;
   }
-  
-  .col-75 {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=search] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
+}
+
+.buttonContainer {
+  text-align: end;
+}
+
+.listNumberPage {
+  margin: 2%;
+}
+.listNumberPage li {
+  display: inline;
+  padding-left: 2vh;
+  padding-right: 2vh;
+}
+
+.listEpisodes {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.listEpisodes thead tr th {
+  color: #f2f2f2;
+  font-size: 16px;
+}
+
+.listEpisodes td {
+  border-bottom: 2px solid rgb(71, 60, 60);
+  padding: 10px 10px 0;
+  text-align: left;
+  color: #eee;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(244, 138, 138);
+}
+span {
+  color: #eee;
+  font-size: 1.2rem;
+}
+
+.mainContainer {
+  background-color: rgba(41, 44, 52, 0.651);
+  padding: 2vh;
+  margin: 3%;
+  border-radius: 20px;
+}

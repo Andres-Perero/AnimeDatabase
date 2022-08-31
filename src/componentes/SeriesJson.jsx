@@ -2,7 +2,7 @@ import datosJson from "../datos/movies.json";
 import styles from "../estilos/SeriesGrid.module.css";
 import {SerieCard} from "./SerieCard";
 
-export const  MoviesGrid =() => {
+export const  SeriesJson =() => {
   return (
     <div className={styles.gridContainer}>
       {datosJson.map((serie) => (

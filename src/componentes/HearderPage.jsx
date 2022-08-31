@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import { Series } from "../pages/Series";
+import { SeriesLocale } from "../pages/SeriesLocale";
 import { Slider } from "./Carrusel";
 import { SerieDetailsweb } from "../pages/SerieDetails";
 import { RankinAnineList } from "./Ranking";
-import { SearchSerie } from "../pages/SearchSerie";
+import { SearchSerieGrid } from "../pages/SearchSerieGrid";
 import styles from "../estilos/Header.module.css";
 
-export function HearderPage() {
+
+export const  HearderPage = () => {
   return (
     <>
       <header className={styles.wrapper}>
@@ -26,13 +27,13 @@ export function HearderPage() {
         </nav>
         <Routes>
           <Route path="/" element={<Slider />} />
-          <Route path="/list-serie" element={<Series />} />
+          <Route path="/list-serie" element={<SeriesLocale />} />
           <Route
             path="/serie/:serieId/:serieTitle"
             element={<SerieDetailsweb />}
           />
           <Route path="/top-anime-list" element={<RankinAnineList />} />
-          <Route path="/search" element={<SearchSerie />} />
+          <Route path="/search" element={<SearchSerieGrid />} />
         </Routes>
       </main>
     </>

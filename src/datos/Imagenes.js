@@ -9,7 +9,6 @@ import imagen8 from "../datos/Imagen8.jfif";
 import imagen9 from "../datos/Imagen9.jfif";
 import imagen10 from "../datos/Imagen10.jfif";
 
-
 export default [
   imagen1,
   imagen2,

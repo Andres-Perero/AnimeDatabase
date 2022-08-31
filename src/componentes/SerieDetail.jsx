@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../estilos/SerieDetails.module.css";
 import moment from "moment";
+import { Translate } from "./Translate";
+import { EpisodesSerie } from "./EpisodesSerie";
 
 export const CardDetail = ({ id, title, infoSerie }) => {
+  const [isShown, setIsShown] = useState(false);
+  const handleClick = (event) => {
+    // 👇️ toggle shown state
+    setIsShown((current) => !current);
+
+    // 👇️ or simply set it to true
+    // setIsShown(true);
+  };
   return (
     <div>
       <div className={styles.wrapper}>
@@ -12,7 +22,11 @@ export const CardDetail = ({ id, title, infoSerie }) => {
               <div className={styles.movie_img}>
                 <img
                   id={styles.img_src}
-                  src={infoSerie.images.jpg.large_image_url}
+                  /**/
+                  src={
+                    infoSerie.images.jpg.large_image_url &&
+                    infoSerie.images.jpg.large_image_url
+                  } /**/
                   alt={infoSerie.title}
                 />
               </div>
@@ -21,7 +35,9 @@ export const CardDetail = ({ id, title, infoSerie }) => {
                   <h1 className={styles.movie_title}>{infoSerie.title}</h1>
                 </header>
                 <h2>Sinopsis</h2>
-                <div className={styles.movie_desc}>{infoSerie.synopsis}</div>
+                <div className={styles.movie_desc}>
+                  <Translate info={infoSerie.synopsis} />
+                </div>
                 <div className={styles.movie_details}>
                   <h2>Detalles</h2>
                   <ul className={styles.flex}>
@@ -29,7 +45,11 @@ export const CardDetail = ({ id, title, infoSerie }) => {
                       Fecha lanzamiento:{" "}
                       <span id={styles.movie_date}>
                         <strong>
-                          {moment(infoSerie.aired.from).format("MMMM DD YYYY")}
+                          <Translate
+                            info={moment(infoSerie.aired.from).format(
+                              "MMMM DD YYYY"
+                            )}
+                          />
                         </strong>
                       </span>
                     </li>
@@ -42,7 +62,11 @@ export const CardDetail = ({ id, title, infoSerie }) => {
                     <li>
                       Episodios:{" "}
                       <span id={styles.movie_runtime}>
-                        <strong>{infoSerie.episodes}</strong>
+                        {infoSerie.episodes !== null ? (
+                          <strong>{infoSerie.episodes}</strong>
+                        ) : (
+                          <strong>Actualmente en emision</strong>
+                        )}
                       </span>
                     </li>
                     <li>
@@ -58,19 +82,23 @@ export const CardDetail = ({ id, title, infoSerie }) => {
                     <li>
                       Puntuacion:{" "}
                       <span id={styles.movie_status}>
-                        <strong>{infoSerie.status}</strong>
+                        <strong>{infoSerie.score}</strong>
                       </span>
                     </li>
                     <li>
                       Estado:{" "}
                       <span id={styles.movie_status}>
-                        <strong>{infoSerie.status}</strong>
+                        <strong>
+                          <Translate info={infoSerie.status} />
+                        </strong>
                       </span>
                     </li>
                   </ul>
                 </div>
-
-                <a
+                <button onClick={handleClick} className={styles.btn}>
+                  Episodios
+                </button>
+                {/* <a
                   href={infoSerie.url}
                   className={styles.btn}
                   target="_blank"
@@ -88,13 +116,22 @@ export const CardDetail = ({ id, title, infoSerie }) => {
                     </svg>
                   </svg>
                   Ver Serie
-                </a>
+                </a> */}
               </div>
             </article>
           </section>
         </main>
       </div>
+      <div>
+        {/* 👇️ show elements on click */}
+        {isShown && (
+          <div>
+            <EpisodesSerie idSerie={id} />
+          </div>
+        )}
+        {/* 👇️ show component on click */}
+        {isShown && <></>}
+      </div>
     </div>
   );
-}
-
+};

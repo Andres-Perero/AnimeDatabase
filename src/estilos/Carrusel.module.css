@@ -1,5 +1,5 @@
 .sliderContenedor {
-  margin: 0vh 12vh 0vh 12vh;
+  margin: 0vh 8vh 0vh 8vh;
   overflow: hidden;
   text-align: center;
   height: 82vh;
@@ -16,14 +16,13 @@
 }
 
 .item img {
-  height: 78vh;
-  width: 60vh;
-  cursor:grab;
+  height: 80vh;
+  width: 55vh;
+  cursor: grab;
   pointer-events: none;
-  margin: 0 2.5vh;
+  margin: 0 1.5vh;
   object-fit: cover;
-  border-radius:5px;
-
+  border-radius: 3px;
 }
 
 .linkSerie {

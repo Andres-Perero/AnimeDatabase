@@ -9,11 +9,11 @@ const variants = {
     opacity: 0,
   },
   visible: () => ({
-    y: 25,
+    y: 10,
     x: 10,
     opacity: 1,
     transition: {
-      duration: 1.8,
+      duration: 1,
     },
   }),
 };
@@ -35,7 +35,8 @@ export const Slider = () => {
           dragConstraints={{ right: 0, left: -width }}
         >
           {ImagesJson.map((imagen, index) => (
-            <motion.div key={index}
+            <motion.div
+              key={index}
               custom={{ delay: (index + 1) * 0.15 }}
               initial="hidden"
               animate="visible"
@@ -43,9 +44,9 @@ export const Slider = () => {
               variants={variants}
               layoutId={imagen}
               className={styles.item}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 500, damping: 100 }}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 400, damping: 100 }}
             >
               <img src={imagen} alt={index} />
               <Link
@@ -61,5 +62,3 @@ export const Slider = () => {
     </motion.div>
   );
 };
-
-
